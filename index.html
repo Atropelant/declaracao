@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body{
+        background-color: red;
+      
+    }
+    .painel{
+        width: 80vw;
+        height: 70vh;
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        padding-top: 1vh;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.54);
+        margin-left: 8vw;
+    }
+
+    #sim{
+        height: 40px;
+        width: 60px;
+        background-color: red;
+        border: 2px solid white;
+        border-radius: 10px;
+        color: white;
+        margin-left: -60px;
+    }
+
+    #nao{
+        position: absolute;
+        height: 40px;
+        width: 60px;
+        background-color: red;
+        border:2px solid white;
+        border-radius: 10px;
+        color: white;
+        margin-left: 10px;
+    }
+
+    img{
+        width: 40vw;
+        display: flex;
+        margin: auto;
+    }
+</style>
+
+</head>
+<body>
+    <div class="painel">
+        <h1> Preparada para o sua surpresa?</h1>
+
+        <a href="index2.html"><button id="sim"> Sim!</button></a>
+        <button onmouseover="fuja ()" id="nao"> Não =(</button>
+
+        <img src="https://i.pinimg.com/originals/ef/96/87/ef9687b36e36605b375b4e9b0cde51db.gif" alt="">
+    </div>
+
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+</body>
+</html>
